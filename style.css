@@ -1,0 +1,329 @@
+/* =========================================================
+   style.css — Site da Escola Abel (PWA)
+   Organizado em: variáveis, base, menu, seções, rodapé.
+   ========================================================= */
+
+/* ---------- 1. Variáveis de cor (fácil de personalizar) ---------- */
+:root {
+  --cor-primaria: #2563eb;      /* azul */
+  --cor-primaria-escura: #1d4ed8;
+  --cor-fundo: #ffffff;
+  --cor-fundo-clara: #f1f5f9;   /* cinza bem claro */
+  --cor-texto: #1e293b;         /* cinza escuro */
+  --cor-texto-suave: #64748b;
+  --cor-borda: #e2e8f0;
+  --sombra: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --raio: 14px;
+}
+
+/* ---------- 2. Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar nos links */
+  scroll-padding-top: 70px; /* espaço para o menu fixo */
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+/* ---------- 3. Menu de navegação ---------- */
+.cabecalho {
+  position: sticky; /* fica grudado no topo ao rolar */
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--cor-borda);
+  z-index: 100;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--cor-primaria);
+}
+
+.menu-lista {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+}
+
+.menu-link {
+  display: block;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu-link:hover,
+.menu-link.ativo {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+/* Botão hambúrguer (só aparece no celular) */
+.menu-botao {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.menu-botao span {
+  width: 24px;
+  height: 3px;
+  background: var(--cor-texto);
+  border-radius: 3px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+/* Quando o menu está aberto, vira um "X" */
+.menu-botao.aberto span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-botao.aberto span:nth-child(2) { opacity: 0; }
+.menu-botao.aberto span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---------- 4. Seções ---------- */
+.secao {
+  padding: 72px 0;
+}
+
+.secao-clara {
+  background: var(--cor-fundo-clara);
+}
+
+/* Hero (página inicial) */
+.hero {
+  background: linear-gradient(135deg, var(--cor-primaria), #7c3aed);
+  color: #fff;
+  text-align: center;
+  padding: 96px 0;
+}
+
+.destaque {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  margin-bottom: 14px;
+}
+
+.subtitulo {
+  max-width: 640px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Botões */
+.botao {
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+}
+
+.botao-primario {
+  background: #fff;
+  color: var(--cor-primaria);
+}
+
+.botao-secundario {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Títulos das seções */
+.titulo-secao {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 12px;
+  color: var(--cor-primaria-escura);
+}
+
+.texto-secao {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+  color: var(--cor-texto-suave);
+}
+
+/* Grade de cartões */
+.grade {
+  display: grid;
+  gap: 22px;
+}
+
+.grade-3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.cartao {
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 26px 22px;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s;
+}
+
+.secao-clara .cartao {
+  background: #fff;
+}
+
+.cartao:hover {
+  transform: translateY(-5px);
+}
+
+.cartao-icone {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cartao h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: var(--cor-primaria-escura);
+}
+
+.cartao p {
+  color: var(--cor-texto-suave);
+  font-size: 0.97rem;
+}
+
+.cartao-contato h3 {
+  font-size: 1rem;
+}
+
+/* Aviso de instalação do PWA */
+.aviso {
+  margin-top: 40px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--raio);
+  padding: 18px 22px;
+  text-align: center;
+  color: var(--cor-texto);
+}
+
+/* ---------- 5. Rodapé ---------- */
+.rodape {
+  background: var(--cor-texto);
+  color: #cbd5e1;
+  text-align: center;
+  padding: 22px 0;
+  font-size: 0.92rem;
+}
+
+/* ---------- 6. Botão flutuante "Instalar app" ---------- */
+.botao-instalar {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  z-index: 200;
+}
+
+.botao-instalar:hover {
+  background: var(--cor-primaria-escura);
+}
+
+/* ---------- 7. Responsividade (celulares) ---------- */
+@media (max-width: 768px) {
+  /* Esconde a lista e mostra o botão hambúrguer */
+  .menu-botao {
+    display: flex;
+  }
+
+  .menu-lista {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 10px 0;
+    display: none; /* escondido até o botão ser clicado */
+  }
+
+  .menu-lista.aberto {
+    display: flex;
+  }
+
+  .menu-link {
+    padding: 13px 24px;
+    border-radius: 0;
+  }
+
+  .secao {
+    padding: 54px 0;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+}

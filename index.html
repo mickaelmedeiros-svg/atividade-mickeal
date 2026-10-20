@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== Dados básicos do site ===== -->
+  <title>Escola Abel | Início</title>
+  <meta name="description" content="Site institucional da Escola Abel - projeto escolar em HTML, CSS e JavaScript (PWA)." />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- ===== Recursos do PWA ===== -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Escola Abel" />
+
+  <!-- ===== Folha de estilo ===== -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Cabeçalho com menu de navegação ===== -->
+  <header class="cabecalho">
+    <nav class="menu container">
+      <!-- Logo / nome da escola -->
+      <a href="#inicio" class="logo">
+        <img src="icons/icon-192.png" alt="Ícone da Escola Abel" width="34" height="34" />
+        <span>Escola Abel</span>
+      </a>
+
+      <!-- Lista de links das seções -->
+      <ul class="menu-lista" id="menuLista">
+        <li><a href="#inicio" class="menu-link ativo">Início</a></li>
+        <li><a href="#sobre" class="menu-link">Sobre</a></li>
+        <li><a href="#disciplinas" class="menu-link">Disciplinas</a></li>
+        <li><a href="#contato" class="menu-link">Contato</a></li>
+      </ul>
+
+      <!-- Botão que abre/fecha o menu no celular -->
+      <button class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= SEÇÃO: INÍCIO ================= -->
+    <section id="inicio" class="secao hero">
+      <div class="container hero-conteudo">
+        <p class="destaque">Bem-vindo ao nosso site</p>
+        <h1>Escola Abel</h1>
+        <p class="subtitulo">
+          Uma página institucional simples, moderna e responsiva,
+          criada por estudantes como projeto prático de HTML, CSS e JavaScript.
+        </p>
+        <div class="hero-botoes">
+          <a href="#sobre" class="botao botao-primario">Conheça a escola</a>
+          <a href="#disciplinas" class="botao botao-secundario">Ver disciplinas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO: SOBRE ================= -->
+    <section id="sobre" class="secao">
+      <div class="container">
+        <h2 class="titulo-secao">Sobre a Escola</h2>
+        <p class="texto-secao">
+          A Escola Abel é uma instituição de ensino comprometida com a formação
+          completa de seus estudantes. Aqui, além do conteúdo tradicional, os
+          alunos são estimulados a pensar de forma crítica, criativa e
+          colaborativa.
+        </p>
+
+        <!-- Três cartões com informações rápidas -->
+        <div class="grade grade-3">
+          <article class="cartao">
+            <div class="cartao-icone">📚</div>
+            <h3>Ensino de Qualidade</h3>
+            <p>Professores dedicados e um plano de estudos alinhado às necessidades dos alunos.</p>
+          </article>
+          <article class="cartao">
+            <div class="cartao-icone">🤝</div>
+            <h3>Comunidade Unida</h3>
+            <p>Escola, famílias e estudantes trabalham juntos para construir um bom ambiente.</p>
+          </article>
+          <article class="cartao">
+            <div class="cartao-icone">💡</div>
+            <h3>Inovação</h3>
+            <p>Projetos práticos, tecnologia e criatividade fazem parte do dia a dia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO: DISCIPLINAS ================= -->
+    <section id="disciplinas" class="secao secao-clara">
+      <div class="container">
+        <h2 class="titulo-secao">Principais Disciplinas</h2>
+        <p class="texto-secao">
+          Conheça algumas das disciplinas que fazem parte do nosso currículo.
+        </p>
+
+        <div class="grade grade-3">
+          <article class="cartao">
+            <h3>Português</h3>
+            <p>Leitura, escrita, gramática e interpretação de textos.</p>
+          </article>
+          <article class="cartao">
+            <h3>Matemática</h3>
+            <p>Números, operações, geometria e resolução de problemas.</p>
+          </article>
+          <article class="cartao">
+            <h3>Ciências</h3>
+            <p>Natureza, corpo humano, meio ambiente e experimentos.</p>
+          </article>
+          <article class="cartao">
+            <h3>História</h3>
+            <p>Passado, sociedade e formação do nosso país.</p>
+          </article>
+          <article class="cartao">
+            <h3>Geografia</h3>
+            <p>Mapas, recursos, clima e população.</p>
+          </article>
+          <article class="cartao">
+            <h3>Inglês</h3>
+            <p>Novo idioma, vocabulário e conversação básica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO: CONTATO ================= -->
+    <section id="contato" class="secao">
+      <div class="container">
+        <h2 class="titulo-secao">Contato</h2>
+        <p class="texto-secao">
+          Quer saber mais? Fale conosco pelos canais abaixo.
+        </p>
+
+        <div class="grade grade-3">
+          <article class="cartao cartao-contato">
+            <h3>📍 Endereço</h3>
+            <p>Rua das Palmeiras, 123 - Centro</p>
+          </article>
+          <article class="cartao cartao-contato">
+            <h3>📞 Telefone</h3>
+            <p>(00) 0000-0000</p>
+          </article>
+          <article class="cartao cartao-contato">
+            <h3>✉️ E-mail</h3>
+            <p>contato@escolaabel.edu.br</p>
+          </article>
+        </div>
+
+        <!-- Aviso sobre o app -->
+        <div class="aviso">
+          <strong>💡 Dica:</strong> este site é um PWA — no celular, abra o menu
+          do navegador e toque em <em>“Instalar aplicativo”</em> ou
+          <em>“Adicionar à tela inicial”</em> para usá-lo como um app.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Rodapé ===== -->
+  <footer class="rodape">
+    <div class="container">
+      <p>© <span id="ano"></span> Escola Abel — Projeto escolar de HTML, CSS e JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Botão flutuante para instalar o app (aparece quando disponível) ===== -->
+  <button class="botao-instalar" id="botaoInstalar" hidden>📱 Instalar app</button>
+
+  <!-- ===== Script principal ===== -->
+  <script src="script.js"></script>
+</body>
+</html>
