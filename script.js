@@ -75,30 +75,52 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// ---------- 4. Botão "Instalar app" (PWA) ----------
+// ---------- 4. Botão de instalação permanente, com alternativa guiada ----------
 let promptInstalacao = null;
 const botaoInstalar = document.getElementById("botaoInstalar");
+const dialogoInstalacao = document.getElementById("dialogoInstalacao");
 
-// O evento "beforeinstallprompt" só dispara em navegadores que suportam PWA
+function estaNoModoAplicativo() {
+  return window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+}
+
+function abrirInstrucoesInstalacao() {
+  if (typeof dialogoInstalacao.showModal === "function") {
+    dialogoInstalacao.showModal();
+  } else {
+    window.alert("Para instalar: no Android, abra o menu ⋮ do Chrome e escolha Instalar aplicativo. No iPhone, abra no Safari, toque em Compartilhar e escolha Adicionar à Tela de Início.");
+  }
+}
+
+// O botão só é ocultado se o usuário já estiver usando a versão instalada.
+botaoInstalar.hidden = estaNoModoAplicativo();
+
+// Quando disponível, guardamos o convite nativo para exibi-lo após o clique.
 window.addEventListener("beforeinstallprompt", (evento) => {
-  // Impede que o navegador mostre o aviso automático agora
   evento.preventDefault();
   promptInstalacao = evento;
-  // Mostra o nosso botão personalizado
-  botaoInstalar.hidden = false;
 });
 
 botaoInstalar.addEventListener("click", async () => {
-  if (!promptInstalacao) return;
-  promptInstalacao.prompt(); // mostra o diálogo de instalação
-  await promptInstalacao.userChoice; // espera a escolha do usuário
-  promptInstalacao = null;
-  botaoInstalar.hidden = true; // esconde o botão depois da escolha
+  if (!promptInstalacao) {
+    abrirInstrucoesInstalacao();
+    return;
+  }
+
+  try {
+    const convite = promptInstalacao;
+    promptInstalacao = null; // O mesmo convite não pode ser usado duas vezes.
+    await convite.prompt();
+    await convite.userChoice;
+  } catch (erro) {
+    console.warn("Não foi possível abrir a instalação automática:", erro);
+    abrirInstrucoesInstalacao();
+  }
 });
 
-// Esconde o botão se o app já estiver instalado
 window.addEventListener("appinstalled", () => {
   botaoInstalar.hidden = true;
+  if (dialogoInstalacao.open) dialogoInstalacao.close();
 });
 
 // ---------- 5. Ano do rodapé (evita atualizar manualmente) ----------

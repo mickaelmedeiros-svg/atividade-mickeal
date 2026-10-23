@@ -194,8 +194,44 @@
     </div>
   </footer>
 
-  <!-- ===== Botão flutuante para instalar o app (aparece quando disponível) ===== -->
-  <button type="button" class="botao-instalar" id="botaoInstalar" hidden>📱 Instalar app</button>
+  <!-- O botão fica visível mesmo quando o navegador não oferece o aviso automático. -->
+  <button type="button" class="botao-instalar" id="botaoInstalar">📱 Instalar app</button>
+
+  <!-- Instruções alternativas para navegadores sem o evento beforeinstallprompt. -->
+  <dialog class="dialogo-instalacao" id="dialogoInstalacao" aria-labelledby="tituloInstalacao">
+    <div class="dialogo-conteudo">
+      <div class="dialogo-cabecalho">
+        <span class="dialogo-icone" aria-hidden="true">📲</span>
+        <div>
+          <p class="secao-etiqueta">ACESSO RÁPIDO</p>
+          <h2 id="tituloInstalacao">Instale a Escola Abel</h2>
+        </div>
+      </div>
+      <p class="dialogo-intro">Seu navegador não mostrou a instalação automática. Você pode adicionar o site à tela inicial pelo menu:</p>
+      <div class="passos-instalacao">
+        <div>
+          <h3>Android · Chrome</h3>
+          <ol>
+            <li>Abra este site no Chrome.</li>
+            <li>Toque nos três pontos (⋮).</li>
+            <li>Escolha <strong>Instalar aplicativo</strong> ou <strong>Adicionar à tela inicial</strong>.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>iPhone · Safari</h3>
+          <ol>
+            <li>Abra este site no Safari.</li>
+            <li>Toque em <strong>Compartilhar</strong>.</li>
+            <li>Escolha <strong>Adicionar à Tela de Início</strong>.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="dialogo-observacao">O aplicativo precisa estar publicado por HTTPS, como no GitHub Pages.</p>
+      <form method="dialog">
+        <button class="botao-dialogo" type="submit">Entendi</button>
+      </form>
+    </div>
+  </dialog>
 
   <!-- ===== Script principal ===== -->
   <script src="script.js"></script>

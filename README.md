@@ -51,10 +51,15 @@ na tela inicial do celular e funciona offline.
 ## 📱 Como instalar no celular
 
 1. Abra o site publicado no **Chrome** (Android) ou **Safari** (iPhone).
-2. **Android:** menu (3 pontos) → **Instalar aplicativo** / **Adicionar à tela inicial**.
+2. Toque em **📱 Instalar app** na página. Se o navegador permitir, o convite de
+   instalação aparece; caso contrário, uma janela explica o procedimento.
+3. **Android:** menu (3 pontos) → **Instalar aplicativo** / **Adicionar à tela inicial**.
    **iPhone:** botão **Compartilhar** → **Adicionar à Tela de Início**.
-3. O ícone da Escola Abel aparece na tela inicial e o site abre como app,
+4. O ícone da Escola Abel aparece na tela inicial e o site abre como app,
    inclusive **sem internet** (offline).
+
+> O botão fica visível no navegador mesmo se o evento `beforeinstallprompt`
+> não estiver disponível; ele é ocultado quando o site está aberto como app instalado.
 
 ## ✅ Checklist
 

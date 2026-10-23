@@ -1,6 +1,6 @@
 /* Cache offline. Ao editar arquivos, altere CACHE_VERSAO para atualizar o app. */
 
-const CACHE_VERSAO = "escola-abel-v2";
+const CACHE_VERSAO = "escola-abel-v3";
 
 // Arquivos que precisam ficar disponíveis offline
 const ARQUIVOS = [
