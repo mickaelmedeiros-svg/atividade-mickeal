@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ===== Dados básicos do site ===== -->
-  <title>Escola Abel | Início</title>
-  <meta name="description" content="Site institucional da Escola Abel - projeto escolar em HTML, CSS e JavaScript (PWA)." />
-  <meta name="theme-color" content="#2563eb" />
+  <title>Escola Estadual Professor Abel Freire Coelho</title>
+  <meta name="description" content="Projeto de site institucional da Escola Estadual Professor Abel Freire Coelho, desenvolvido por Mickael Medeiros Rodrigues." />
+  <meta name="theme-color" content="#282d80" />
 
   <!-- ===== Recursos do PWA ===== -->
   <link rel="manifest" href="manifest.json" />
@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="Escola Abel" />
+  <meta name="apple-mobile-web-app-title" content="Abel Freire Coelho" />
 
   <!-- ===== Folha de estilo ===== -->
   <link rel="stylesheet" href="style.css" />
@@ -25,10 +25,10 @@
   <!-- ===== Cabeçalho com menu de navegação ===== -->
   <header class="cabecalho">
     <nav class="menu container">
-      <!-- Logo / nome da escola -->
-      <a href="#inicio" class="logo">
-        <img src="icons/icon-192.png" alt="Ícone da Escola Abel" width="34" height="34" />
-        <span>Escola Abel</span>
+      <!-- Identidade visual oficial enviada para o projeto -->
+      <a href="#inicio" class="logo" aria-label="Ir para o início">
+        <img src="abel.png" alt="Emblema da Escola Abel Freire Coelho" width="48" height="48" />
+        <span class="logo-texto"><span>Escola Estadual Professor</span><strong>Abel Freire Coelho</strong></span>
       </a>
 
       <!-- Lista de links das seções -->
@@ -40,7 +40,7 @@
       </ul>
 
       <!-- Botão que abre/fecha o menu no celular -->
-      <button class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false">
+      <button type="button" class="menu-botao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLista">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -51,15 +51,23 @@
     <!-- ================= SEÇÃO: INÍCIO ================= -->
     <section id="inicio" class="secao hero">
       <div class="container hero-conteudo">
-        <p class="destaque">Bem-vindo ao nosso site</p>
-        <h1>Escola Abel</h1>
-        <p class="subtitulo">
-          Uma página institucional simples, moderna e responsiva,
-          criada por estudantes como projeto prático de HTML, CSS e JavaScript.
-        </p>
-        <div class="hero-botoes">
-          <a href="#sobre" class="botao botao-primario">Conheça a escola</a>
-          <a href="#disciplinas" class="botao botao-secundario">Ver disciplinas</a>
+        <div class="hero-texto">
+          <p class="destaque"><span aria-hidden="true">✦</span> Educação que transforma</p>
+          <h1>Aprender, criar e <span>construir o futuro.</span></h1>
+          <p class="subtitulo">
+            Seja bem-vindo ao espaço digital da Escola Estadual Professor Abel Freire Coelho.
+            Um projeto escolar feito para aproximar conhecimento, pessoas e tecnologia.
+          </p>
+          <div class="hero-botoes">
+            <a href="#sobre" class="botao botao-primario">Conheça a escola <span aria-hidden="true">→</span></a>
+            <a href="#disciplinas" class="botao botao-secundario">Ver disciplinas</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-marca">
+            <img src="abel.png" alt="Logomarca da Escola Estadual Professor Abel Freire Coelho" width="447" height="447" fetchpriority="high" />
+          </div>
+          <p class="hero-legenda"><span class="legenda-ponto"></span> Nossa escola, nossa identidade</p>
         </div>
       </div>
     </section>
@@ -67,9 +75,10 @@
     <!-- ================= SEÇÃO: SOBRE ================= -->
     <section id="sobre" class="secao">
       <div class="container">
+        <p class="secao-etiqueta">NOSSA IDENTIDADE</p>
         <h2 class="titulo-secao">Sobre a Escola</h2>
         <p class="texto-secao">
-          A Escola Abel é uma instituição de ensino comprometida com a formação
+          A Escola Estadual Professor Abel Freire Coelho é uma instituição de ensino comprometida com a formação
           completa de seus estudantes. Aqui, além do conteúdo tradicional, os
           alunos são estimulados a pensar de forma crítica, criativa e
           colaborativa.
@@ -99,6 +108,7 @@
     <!-- ================= SEÇÃO: DISCIPLINAS ================= -->
     <section id="disciplinas" class="secao secao-clara">
       <div class="container">
+        <p class="secao-etiqueta">CONHECIMENTO EM AÇÃO</p>
         <h2 class="titulo-secao">Principais Disciplinas</h2>
         <p class="texto-secao">
           Conheça algumas das disciplinas que fazem parte do nosso currículo.
@@ -136,29 +146,30 @@
     <!-- ================= SEÇÃO: CONTATO ================= -->
     <section id="contato" class="secao">
       <div class="container">
+        <p class="secao-etiqueta">ESTAMOS JUNTOS</p>
         <h2 class="titulo-secao">Contato</h2>
         <p class="texto-secao">
-          Quer saber mais? Fale conosco pelos canais abaixo.
+          Precisa de informações sobre a escola? Procure os canais oficiais de atendimento da instituição.
         </p>
 
         <div class="grade grade-3">
           <article class="cartao cartao-contato">
-            <h3>📍 Endereço</h3>
-            <p>Rua das Palmeiras, 123 - Centro</p>
+            <h3>📍 Atendimento presencial</h3>
+            <p>Consulte a secretaria da escola para saber sobre horários e atendimento.</p>
           </article>
           <article class="cartao cartao-contato">
-            <h3>📞 Telefone</h3>
-            <p>(00) 0000-0000</p>
+            <h3>📞 Informações</h3>
+            <p>Confirme os números de telefone nos canais oficiais da instituição.</p>
           </article>
           <article class="cartao cartao-contato">
-            <h3>✉️ E-mail</h3>
-            <p>contato@escolaabel.edu.br</p>
+            <h3>✉️ Comunicação</h3>
+            <p>Procure a direção ou coordenação escolar para orientações.</p>
           </article>
         </div>
 
         <!-- Aviso sobre o app -->
         <div class="aviso">
-          <strong>💡 Dica:</strong> este site é um PWA — no celular, abra o menu
+          <strong>💡 Dica:</strong> este projeto é um PWA — no celular, abra o menu
           do navegador e toque em <em>“Instalar aplicativo”</em> ou
           <em>“Adicionar à tela inicial”</em> para usá-lo como um app.
         </div>
@@ -170,12 +181,21 @@
   <!-- ===== Rodapé ===== -->
   <footer class="rodape">
     <div class="container">
-      <p>© <span id="ano"></span> Escola Abel — Projeto escolar de HTML, CSS e JavaScript.</p>
+      <div class="rodape-conteudo">
+        <div>
+          <p class="rodape-escola">Escola Estadual Professor Abel Freire Coelho</p>
+          <p>© <span id="ano"></span> · Projeto escolar em HTML, CSS e JavaScript.</p>
+        </div>
+        <div class="rodape-creditos">
+          <p>Desenvolvido por <strong>Mickael Medeiros Rodrigues</strong></p>
+          <p>3ª Série · Turma Informática</p>
+        </div>
+      </div>
     </div>
   </footer>
 
   <!-- ===== Botão flutuante para instalar o app (aparece quando disponível) ===== -->
-  <button class="botao-instalar" id="botaoInstalar" hidden>📱 Instalar app</button>
+  <button type="button" class="botao-instalar" id="botaoInstalar" hidden>📱 Instalar app</button>
 
   <!-- ===== Script principal ===== -->
   <script src="script.js"></script>

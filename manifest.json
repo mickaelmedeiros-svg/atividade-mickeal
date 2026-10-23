@@ -1,14 +1,14 @@
 {
-  "name": "Escola Abel",
-  "short_name": "Escola Abel",
-  "description": "Site institucional da Escola Abel - projeto escolar PWA.",
+  "name": "Escola Estadual Professor Abel Freire Coelho",
+  "short_name": "Abel Freire Coelho",
+  "description": "Projeto institucional escolar desenvolvido por Mickael Medeiros Rodrigues.",
   "lang": "pt-BR",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "background_color": "#f5f7fd",
+  "theme_color": "#282d80",
   "icons": [
     {
       "src": "icons/icon-192.png",
@@ -23,7 +23,7 @@
       "purpose": "any"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icons/icon-maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

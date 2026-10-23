@@ -1,8 +1,12 @@
 # Escola Abel — Site PWA (Projeto Escolar)
 
-Site institucional simples, moderno e responsivo da **Escola Abel**, feito em
-HTML, CSS e JavaScript. É um **PWA** (Progressive Web App): pode ser instalado
+Projeto escolar de site institucional responsivo da **Escola Estadual Professor
+Abel Freire Coelho**, feito em HTML, CSS e JavaScript. É um **PWA** (Progressive Web App): pode ser instalado
 na tela inicial do celular e funciona offline.
+
+**Desenvolvedor:** Mickael Medeiros Rodrigues — **3ª Série, Turma Informática**.
+
+**Identidade visual:** azul-escuro, ciano e amarelo, inspirados na imagem `abel.png`.
 
 ## 📁 Arquivos do projeto
 
@@ -14,16 +18,19 @@ na tela inicial do celular e funciona offline.
 | `manifest.json`    | Dados do PWA (nome, ícones, cores)                  |
 | `service-worker.js`| Guarda os arquivos para funcionar offline           |
 | `icons/`           | Ícones do aplicativo (192px e 512px)                |
+| `abel.png`         | Logomarca da escola utilizada no cabeçalho e na apresentação |
 
 ## ▶️ Como executar (localmente)
 
-1. Abra a pasta no **VS Code** (ou [vscode.dev/github](https://vscode.dev/github) para o VS Code Online).
+1. Abra a pasta no **VS Code instalado no computador**.
 2. Instale a extensão **Live Server**.
 3. Clique com o botão direito em `index.html` → **Open with Live Server**.
 4. O site abre no navegador em `http://127.0.0.1:5500`.
 
 > O PWA (Service Worker e instalação) só funciona via **HTTP**, não abrindo o
 > arquivo com `file://`. Por isso use o Live Server.
+> O editor `vscode.dev` permite editar os arquivos, mas não executa o Live Server
+> do computador. Para testar a instalação, publique via GitHub Pages usando HTTPS.
 
 ## 📦 Como publicar no GitHub (GitHub Pages)
 
@@ -55,4 +62,10 @@ na tela inicial do celular e funciona offline.
 - [x] Menu intuitivo com hambúrguer no celular
 - [x] Manifesto e Service Worker configurados
 - [x] Ícones 192px e 512px
+- [x] Cores inspiradas na logomarca enviada pela escola
+- [x] Identificação do desenvolvedor no rodapé
 - [x] Sem banco de dados, login ou recursos desnecessários
+
+> **Observação:** os antigos contatos de exemplo foram substituídos por
+> orientações gerais. Antes de publicar como canal oficial, a escola deve
+> fornecer endereço, telefone e e-mail verificados.

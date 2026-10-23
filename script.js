@@ -21,12 +21,24 @@ menuBotao.addEventListener("click", () => {
   menuBotao.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
 });
 
+// O menu móvel também pode ser fechado pela tecla Escape.
+document.addEventListener("keydown", (evento) => {
+  if (evento.key === "Escape" && menuLista.classList.contains("aberto")) {
+    menuLista.classList.remove("aberto");
+    menuBotao.classList.remove("aberto");
+    menuBotao.setAttribute("aria-expanded", "false");
+    menuBotao.setAttribute("aria-label", "Abrir menu");
+    menuBotao.focus();
+  }
+});
+
 // Fecha o menu depois que um link é clicado
 document.querySelectorAll(".menu-link").forEach((link) => {
   link.addEventListener("click", () => {
     menuLista.classList.remove("aberto");
     menuBotao.classList.remove("aberto");
     menuBotao.setAttribute("aria-expanded", "false");
+    menuBotao.setAttribute("aria-label", "Abrir menu");
   });
 });
 
